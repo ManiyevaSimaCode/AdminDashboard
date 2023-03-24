@@ -1,0 +1,53 @@
+﻿@using AdminDashboard_Sima_Maniyeva_.Models
+@model List<DashboardViewModel>
+
+@{
+    ViewData["Title"] = "Member Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+   <div class="main-wrapper" method="post" >
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <table id="zero-conf" class="display" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Ad</th>
+                                            <th>Vəzifə</th>
+                                            <th>Yaş</th>
+                                            <th>Universitet</th>
+                                            <th>Şöbə</th>
+                                            <th>Maaş</th>
+                                            <th>Başlama vaxtı</th>
+                                        </tr>
+                                    </thead>
+                        @foreach(var item in @Model[1].Members)
+                        {
+                             <tbody>
+                                        <tr>
+                                            <td>@item.FirstName @item.LastName</td>
+                                            <td>@item.Speciality.SpecialityName</td>
+                                            <td>@item.Age</td>
+                                            <td>@item.University.UniversityName</td>
+                                            <td>@item.Department.DepartmentName</td>
+                                            <td>@item.Salary</td>
+                                            <td>@item.StartTime</td>
+
+                                        </tr>
+                                     
+                                    </tbody> 
+
+                        }
+                      
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="page-footer">
+                <a asp-controller="Home" asp-action="MainPage" class="page-footer-item page-footer-item-left"><i data-feather="arrow-left" class="footer-left"></i>Əsas səhifə</a>
+                <a asp-controller="Event" asp-action="MainPage" class="page-footer-item page-footer-item-right">Tədbirlər<i data-feather="arrow-right" class="footer-right"></i></a>
+            </div>

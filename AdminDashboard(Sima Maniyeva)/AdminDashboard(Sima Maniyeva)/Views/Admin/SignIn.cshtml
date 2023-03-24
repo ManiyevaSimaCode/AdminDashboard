@@ -1,0 +1,97 @@
+﻿@model AdminDashboard_Sima_Maniyeva_.Models.DashboardViewModel
+@{
+
+    Layout=null;
+    }
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive Admin Dashboard Template">
+    <meta name="keywords" content="admin,dashboard">
+    <meta name="author" content="stacks">
+    <!-- Title -->
+    <title> Admin Dashboard</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&amp;display=swap" rel="stylesheet">
+    <link href="~/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="~/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+    <link href="~/plugins/pace/pace.css" rel="stylesheet">
+
+
+    <!-- Theme Styles -->
+    <link href="../css/main.min.css" rel="stylesheet">
+    <link href="../css/custom.css" rel="stylesheet">
+</head>
+
+<body class="login-page">
+
+    <div class="container">
+        <div class="row col-12">
+            <div class="col-lg-6">
+                <div class="card login-box-container">
+                    <div class="card-body">
+                        <div class="authent-logo">
+                            <a asp-action="MainPage" asp-controller="About" style="font-size:65px">VTP22YAY</a>
+                        </div>
+                        <div class="authent-text">
+                            <p>Hesabınıza daxil olun.</p>
+                        </div>
+
+                        <form method="post">
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input asp-for="@Model.Admin.Email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                    <label for="floatingInput">Email ünvanı</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-floating">
+                                    <input asp-for="@Model.Admin.Password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                    <label for="floatingPassword">Şifrə</label>
+                                </div>
+                            </div>   
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-info m-b-xs">Daxil ol</button>
+
+                            </div>
+
+                        </form>
+                               @{
+                      if(Model != null)
+                      {
+           
+                       <div class="alert alert-danger mt-3 mb-0 text-center text-light" role="alert"><b>@Model.ErrorMessage</b>
+                       </div>
+                      }
+                      }
+                        <div class="authent-reg">
+                            <p>Hesabınız yoxdur? <a asp-action="SignUp" asp-controller="Admin">Hesab yarat</a></p>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="~/images/avatars/undraw_Login_re_4vu2__1_-removebg-preview.png" alt="" style="margin-top:80px">
+        </div>
+        </div>
+    </div>
+
+
+    <!-- Javascripts -->
+    <script src="~/plugins/jquery/jquery-3.4.1.min.js"></script>
+    @*<script src="https://unpkg.com/@popperjs/core@2"></script>*@
+    <script src="~/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="~/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+    <script src="~/plugins/pace/pace.min.js"></script>
+    <script src="~/js/main.min.js"></script>
+</body>
+
+</html>

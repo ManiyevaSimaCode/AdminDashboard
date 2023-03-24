@@ -1,0 +1,252 @@
+﻿@using AdminDashboard_Sima_Maniyeva_.Models
+@model List<DashboardViewModel>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive Admin Dashboard Template">
+    <meta name="keywords" content="admin,dashboard">
+    <meta name="author" content="stacks">
+    <title>Admin Dashboard</title>
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="~/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="~/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+    <link href="~/plugins/pace/pace.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css"/>
+    <link href="~/plugins/apexcharts/apexcharts.css" rel="stylesheet">
+    
+    <!-- Theme Styles -->
+    <link href="~/css/site.css" rel="stylesheet">
+    <link href="~/css/main.min.css" rel="stylesheet">
+    <link href="~/css/custom.css" rel="stylesheet">
+
+
+</head>
+
+<body class="page-sidebar-collapsed">
+
+    <div class="page-container">
+        <div class="page-sidebar">
+            <a class="logo" asp-controller="Home" asp-action="MainPage" >VTP22YAY</a>
+            <ul class="list-unstyled accordion-menu">
+                <li class="active-page">
+                    <a asp-controller="Home" asp-action="MainPage" class="active"><i data-feather="activity"></i>Əsas səhifə<i class="fas fa-chevron-right dropdown-icon"></i></a>
+                </li>
+
+                <li>
+                    <a asp-controller="Member" asp-action="MainPage" ><i class="fa-regular fa-user" style="font-size:1.5rem; margin-right:1rem"></i>Üzvlər</a>
+                </li>
+                <li>
+                    <a asp-controller="Department" asp-action="MainPage"><i class="fa-solid fa-sitemap" style="font-size:1.5rem; margin-right:1rem"></i>Şöbələr</a>
+                </li>
+                <li>
+                    <a asp-controller="Event" asp-action="MainPage"><i class="fa-solid fa-calendar"  style="font-size:1.5rem; margin-right:1rem"></i>Tədbirlər</a>
+                </li>
+                <li>
+                    <a asp-controller="About" asp-action="MainPage"><i class="fa-solid fa-info"  style="font-size:1.5rem; margin-right:1rem"></i>Haqqımızda</a>
+                </li>
+
+            </ul>
+            <a href="#" id="sidebar-collapsed-toggle"><i data-feather="arrow-right"></i></a>
+        </div>
+        <div class="page-content">
+            <div class="page-header">
+                <nav class="navbar navbar-expand-lg d-flex justify-content-between">
+                    <div class="header-title flex-fill">
+                        <a href="#" id="sidebar-toggle"><i data-feather="arrow-left"></i></a>
+                        <h5>Əsas səhifə</h5>
+                    </div>
+                    <div class="header-search">
+                        <form>
+                            <input class="form-control" type="text" placeholder="Axtar" aria-label="Search">
+                            <a href="#" class="close-search"><i data-feather="x"></i></a>
+                        </form>
+                    </div>
+                    <div class="flex-fill" id="headerNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item d-md-block d-lg-none">
+                                <a class="nav-link" href="#" id="toggle-search"><i data-feather="search"></i></a>
+                            </li>    
+                            <li class="nav-item dropdown">
+                                <a class="nav-link notifications-dropdown" href="#" id="notificationsDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false">3<div class="spinner-grow text-danger" role="status">
+                              <span class="visually-hidden">Yüklənir...</span>
+                            </div></a>
+                                <div class="dropdown-menu dropdown-menu-end notif-drop-menu" aria-labelledby="notificationsDropDown">
+                                    <h6 class="dropdown-header">Bildirişlər</h6>
+                                    <a href="#">
+                                        <div class="header-notif">
+                                            <div class="notif-image">
+                                                <span class="notification-badge bg-info text-white">
+                                      <i class="fas fa-bullhorn"></i>
+                                    </span>
+                                            </div>
+                                            <div class="notif-text">
+                                                <p>Hesaba giriş edildi. </p>
+                                                <small>19:00</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="header-notif">
+                                            <div class="notif-image">
+                                                <span class="notification-badge bg-primary text-white">
+                                      <i class="fas fa-bolt"></i>
+                                    </span>
+                                            </div>
+                                            <div class="notif-text">
+                                                <p class="bold-notif-text">Profildə dəyişiklik edildi.</p>
+                                                <small>18:00</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="header-notif">
+                                            <div class="notif-image">
+                                                <span class="notification-badge bg-success text-white">
+                                      <i class="fas fa-at"></i>
+                                    </span>
+                                            </div>
+                                            <div class="notif-text">
+                                                <p>Yeni tədbir əlavə olundu.</p>
+                                                <small>Dünən</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="header-notif">
+                                            <div class="notif-image">
+                                                <span class="notification-badge">
+                                      <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt="">
+                                    </span>
+                                            </div>
+                                            <div class="notif-text">
+                                                <p>Profildə dəyişiklik edildi</p>
+                                                <small>Dünən</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="header-notif">
+                                            <div class="notif-image">
+                                                <span class="notification-badge">
+                                      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60" alt="">
+                                    </span>
+                                            </div>
+                                            <div class="notif-text">
+                                                <p>Profildə dəyişiklik edildi</p>
+                                                <small>Dünən</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link profile-dropdown" href="#" id="profileDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false">@Model[0].Admin.FirstName @Model[0].Admin.LastName</a>
+                                <div class="dropdown-menu dropdown-menu-end profile-drop-menu" aria-labelledby="profileDropDown">
+                                    <a class="dropdown-item" href="№"><i data-feather="user"></i>Profil</a>
+                                    <a class="dropdown-item" href="#"><i data-feather="check-circle"></i>Tapşırıqlar</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a asp-controller="Admin" asp-action="SignIn" class="dropdown-item"><i data-feather="log-out"></i>Çıxış</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+@RenderBody()
+            
+        </div>
+    </div>
+    </div>
+
+
+    <!-- Javascripts -->
+    <script src="~/plugins/jquery/jquery-3.4.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"></script>
+    <script src="~/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+    <script src="~/plugins/pace/pace.min.js"></script>
+    <script src="~/plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="~/plugins/chartjs/chart.bundle.min.js"></script>
+    <script src="~/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <!-- apexcharts -->
+    <script src="~/js/pages/apexcharts.init.js"></script>
+        <script src="~/js/pages/charts.js"></script>
+    <script src="~/js/pages/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.js"></script>
+    @*<script src="~/plugins/fullcalendar/main.min.js"></script>*@
+    <script src="~/plugins/fullcalendar/main.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+
+                events: 'https://fullcalendar.io/demo-events.json?overload-day'
+            });
+            calendar.render();
+        });
+    </script>
+    <script src="~/js/pages/datatables.js"></script>
+    <script src="~/js/main.min.js"></script>
+    <script src="~/plugins/DataTables/datatables.min.js"></script>
+
+     <script>
+    $(document).ready( function () {
+    $('zero-conf').DataTable();
+    </script>
+       <script>
+   let ctx=document.getElementById('chartjs4').getContext('2d');
+const myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['ITMembers', 'HRMembers', 'ACCMembers', 'BusinessMembers', 'DMMembers', 'Engineering'],
+        datasets: [{
+            label: '# of Votes',
+            data: [25, 19, 3, 5, 8, 12],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+ 
+} );
+</body>
+
+</html>
+

@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Event Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Responsive Admin Dashboard Template">
+    <meta name="keywords" content="admin,dashboard">
+    <meta name="author" content="stacks">
+    <!-- Title -->
+    <title>Admin Dashboard</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/plugins/font-awesome/css/all.min.css" rel="stylesheet">
+    <link href="~/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+    <link href="~/plugins/pace/pace.css" rel="stylesheet">
+    <link href="~/plugins/fullcalendar/main.min.css" rel="stylesheet">
+    <!-- Theme Styles -->
+    <link href="~/css/main.min.css" rel="stylesheet">
+    <link href="~/css/custom.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+            <div class="main-wrapper">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id='calendar'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-footer">
+                <a asp-controller="Department" asp-action="MainPage" class="page-footer-item page-footer-item-left"><i data-feather="arrow-left" class="footer-left"></i>Şöbələr</a>
+                <a asp-controller="About" asp-action="MainPage" class="page-footer-item page-footer-item-right">Haqqımızda<i data-feather="arrow-right" class="footer-right"></i></a>
+            </div>
+
+
+
+
+
+
+   
+</body>
+
+</html>

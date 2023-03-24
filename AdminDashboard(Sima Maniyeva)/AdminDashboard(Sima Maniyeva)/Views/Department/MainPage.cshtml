@@ -1,0 +1,76 @@
+﻿@using AdminDashboard_Sima_Maniyeva_.Models
+@model List<DashboardViewModel>
+@{
+    ViewData["Title"] = "Department Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="main-wrapper">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="accordion" id="accordionExample">
+                        @foreach(var item in @Model[1].Departments)
+                        {
+                            
+                        <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                         @item.DepartmentName
+                                        </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <table id="zero-conf" class="display" style="width:100%">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Ad</th>
+                                                                    <th>Soyad</th>
+                                                                    <th>Yaş</th>
+                                                                    <th>Universitet</th>
+                                                                    
+                                                                </tr>
+                                                            </thead>
+                                                            @foreach(var member in @Model[2].Members)
+                                                {
+                                                        if (@member.DepartmentId == @item.DepartmentId)
+                                                        {
+                                                              <tbody>
+                                                                <tr>
+                                                                    <td>@member.FirstName</td>
+                                                                    <td>@member.LastName</td>
+                                                                    <td>@member.Age</td>
+                                                                    <td>@member.University.UniversityName</td>
+                                                                   
+                                                                </tr>
+                                                            </tbody>
+                                                            
+                                                        }
+                                                      
+                                                }
+
+                                                        
+                                                        </table>
+                                                    
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   }
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="page-footer">
+                <a asp-action="MainPage" asp-controller="Member" class="page-footer-item page-footer-item-left"><i data-feather="arrow-left" class="footer-left"></i>Üzvlər</a>
+                <a asp-action="MainPage" asp-controller="Event" class="page-footer-item page-footer-item-right">Tədbirlər<i data-feather="arrow-right" class="footer-right"></i></a>
+            </div>

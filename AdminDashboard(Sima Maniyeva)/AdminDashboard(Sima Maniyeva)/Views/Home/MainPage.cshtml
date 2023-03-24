@@ -1,0 +1,258 @@
+﻿@using AdminDashboard_Sima_Maniyeva_.Models
+@model List<DashboardViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+   <div class="main-wrapper">
+            
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="card stats-card">
+                                    <div class="card-body">
+                                        <div class="stats-info">
+                                            <h5 class="card-title">705 nəfər</h5>
+                                            <p class="stats-text">Üzv sayı</p>
+                                        </div>
+                                        <div class="stats-icon change-success">
+                                            <i class="material-icons">trending_up</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card stats-card">
+                                    <div class="card-body">
+                                        <div class="stats-info">
+                                            <h5 class="card-title">21K<span class="stats-change stats-change-danger">-8%</span></h5>
+                                            <p class="stats-text">Səhifəyə keçid sayı</p>
+                                        </div>
+                                        <div class="stats-icon change-danger">
+                                            <i class="material-icons">trending_down</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <div class="card stats-card">
+                                    <div class="card-body">
+                                        <div class="stats-info">
+                                            <h5 class="card-title">150<span class="stats-change stats-change-success">+16%</span></h5>
+                                            <p class="stats-text">Keçirilən tədbirlər</p>
+                                        </div>
+                                        <div class="stats-icon change-success">
+                                            <i class="material-icons">trending_up</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="card stats-card">
+                                    <div class="card-body">
+                                        <div class="stats-info">
+                                            <h5 class="card-title">470K<span class="stats-change stats-change-success">+12%</span></h5>
+                                            <p class="stats-text">Qlobal baxış</p>
+                                        </div>
+                                        <div class="stats-icon change-success">
+                                            <i class="material-icons">trending_up</i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+               
+                <div class="row" style="margin-top:65px">
+                    <div class="col-lg-4">
+                        <div class="card card-bg">
+                            <div class="card-body">
+                                <h5 class="card-title">Ödənişlər</h5>
+                                <div class="transactions-list">
+                                    <div class="tr-item">
+                                        <div class="tr-company-name">
+                                            <div class="tr-icon tr-card-icon tr-card-bg-primary text-white">
+                                                <i class="fa-brands fa-facebook" style="font-size:1.8rem;margin-left:-3px;"></i>
+                                            </div>
+                                            <div class="tr-text">
+                                                <h4 class="text-white">Facebook</h4>
+                                                <p>02 Mart</p>
+                                            </div>
+                                        </div>
+                                        <div class="tr-rate">
+                                            <p><span class="text-success">+24 AZN</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="transactions-list">
+                                    <div class="tr-item">
+                                        <div class="tr-company-name">
+                                            <div class="tr-icon tr-card-icon tr-card-bg-success text-white">
+                                               <i class="fa-solid fa-credit-card" style="font-size:1.8rem;margin-left:-5px;"></i>
+                                            </div>
+                                            <div class="tr-text">
+                                                <h4 class="text-white">Visa</h4>
+                                                <p>02 Mart</p>
+                                            </div>
+                                        </div>
+                                        <div class="tr-rate">
+                                            <p><span class="text-success">+300AZN</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="transactions-list">
+                                    <div class="tr-item">
+                                        <div class="tr-company-name">
+                                            <div class="tr-icon tr-card-icon tr-card-bg-danger text-white" ">
+                                               <i class="fa-solid fa-tv" style="font-size:1.8rem;margin-left:-5px;"></i>
+                                            </div>
+                                            <div class="tr-text">
+                                                <h4 class="text-white">Netflix</h4>
+                                                <p>02 Mart</p>
+                                            </div>
+                                        </div>
+                                        <div class="tr-rate">
+                                            <p><span class="text-danger">-17AZN</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="transactions-list">
+                                    <div class="tr-item">
+                                        <div class="tr-company-name">
+                                            <div class="tr-icon tr-card-icon tr-card-bg-warning text-white">
+                                                <i class="fa-brands fa-cc-mastercard" style="font-size:1.8rem;margin-left:-5px;"></i>
+                                            </div>
+                                            <div class="tr-text">
+                                                <h4 class="text-white">Themeforest</h4>
+                                                <p>02 Mart</p>
+                                            </div>
+                                        </div>
+                                        <div class="tr-rate">
+                                            <p><span class="text-danger">-220AZN</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="transactions-list">
+                                    <div class="tr-item">
+                                        <div class="tr-company-name">
+                                            <div class="tr-icon tr-card-icon tr-card-bg-info text-white">
+                                                <i class="fa-solid fa-dollar-sign" style="font-size:1.8rem;margin-left:-1.3px;"></i>
+                                            </div>
+                                            <div class="tr-text">
+                                                <h4 class="text-white">PayPal</h4>
+                                                <p>02 Mart</p>
+                                            </div>
+                                        </div>
+                                        <div class="tr-rate">
+                                            <p><span class="text-success">+20%</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">İştirakçıların sayına görə bölgü</h5>
+                                <canvas id="chartjs4" width="600" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card stat-widget card-bg">
+                            <div class="card-body">
+                                <h5 class="card-title">Son aktivlik</h5>
+                                <div class="transactions-list">
+                                    <div class="tr-item">
+                                        <div class="tr-company-name">
+                                            <div class="tr-img tr-card-img">
+                                                <img src="../images/avatars/avatar1.jpg" alt="...">
+                                            </div>
+                                            <div class="tr-text">
+                                                <h4 class="text-white">Sima Maniyeva</h4>
+                                                <p>Profilə giriş etdi.</p>
+                                            </div>
+                                        </div>
+                                        <div class="tr-rate">
+                                            <p><span>19:00</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="transactions-list">
+                                    <div class="tr-item">
+                                        <div class="tr-company-name">
+                                            <div class="tr-img tr-card-img">
+                                                <img src="../images/avatars/avatar2.jpg" alt="...">
+                                            </div>
+                                            <div class="tr-text">
+                                                <h4 class="text-white">Ceyhun Mirzəyev</h4>
+                                                <p>Ödənişlə bağlı hesabat yükəndi.</p>
+                                            </div>
+                                        </div>
+                                        <div class="tr-rate">
+                                            <p><span>16:00</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="transactions-list">
+                                    <div class="tr-item">
+                                        <div class="tr-company-name">
+                                            <div class="tr-img tr-card-img">
+                                                <img src="../images/avatars/avatar3.jpg" alt="...">
+                                            </div>
+                                            <div class="tr-text">
+                                                <h4 class="text-white">Minayə Cabbarova</h4>
+                                                <p>"Kaizala" tətbiqində qeydiyyatdan keçdi.</p>
+                                            </div>
+                                        </div>
+                                        <div class="tr-rate">
+                                            <p><span>18:45</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="transactions-list">
+                                    <div class="tr-item">
+                                        <div class="tr-company-name">
+                                            <div class="tr-img tr-card-img">
+                                                <img src="../images/avatars/avatar4.jpg" alt="...">
+                                            </div>
+                                            <div class="tr-text">
+                                                <h4 class="text-white">Rza Cabirov</h4>
+                                                <p>Tapşırıq tamamlandı.</p>
+                                            </div>
+                                        </div>
+                                        <div class="tr-rate">
+                                            <p><span>12:35</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="transactions-list">
+                                    <div class="tr-item">
+                                        <div class="tr-company-name">
+                                            <div class="tr-img tr-card-img">
+                                                <img src="../images/avatars/avatar5.jpg" alt="...">
+                                            </div>
+                                            <div class="tr-text">
+                                                <h4 class="text-white">Sevil Zeynalova</h4>
+                                                <p>Email dəyişikliyi edildi.</p>
+                                            </div>
+                                        </div>
+                                        <div class="tr-rate">
+                                            <p><span>14:56</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
